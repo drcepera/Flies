@@ -10,6 +10,8 @@
 #include <QPushButton>
 #include <QTextEdit>
 #include <QScrollArea>
+#include <QValidator>
+#include <QList>
 
 #include "flybox.h"
 
@@ -43,9 +45,20 @@ private:
     QLabel *    flyDecisionTimeLabel;
     QLineEdit * flyDecisionTimeEdit;
 
+    QLabel *    infoOutLabel;
+    QScrollArea * infoOutScroll;
+
     QPushButton * addFlyButton;
     QPushButton * startStopSimulationButton;
     QPushButton * clearSimulationButton;
+
+    QValidator * intValidator;
+    QValidator * floatValidator;
+
+    QList<QLineEdit*> lineEdits;
+
+private slots:
+    void onStartBtnPressed();
 };
 
 #endif // WINDOW_H
